@@ -1,5 +1,5 @@
 import Styles from "./Home.module.css"
-import DashboardCard from "../../components/dashboardCard/dashboardCard"
+import DashboardCard from "../../components/DashboardCard/DashboardCard"
 import { useContext } from "react"
 import { StockContext } from "../../contexts/StockContext"
 
