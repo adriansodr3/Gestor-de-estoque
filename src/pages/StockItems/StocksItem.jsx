@@ -1,7 +1,7 @@
 export default function StockItems(){
     return (
         <section>
-            <h3>Estoque</h3>
+            <h3>Lista de estoque</h3>
         </section>
     )
 }

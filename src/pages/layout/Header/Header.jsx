@@ -9,7 +9,7 @@ export default function Header(){
             </h3>
             <nav className={Styles.navItems}>
                 <Link to="/">Início</Link>
-                <Link to="/items">Items</Link>
+                <Link to="/items">Itens</Link>
             </nav>
         </header>
     )
