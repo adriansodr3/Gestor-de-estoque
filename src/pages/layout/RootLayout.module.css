@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main {
+  flex: 1;  /* isso faz o main crescer e ocupar todo espaço disponível */
+  overflow-y: auto;  /* permite scroll no conteúdo principal */
+  padding: 1rem;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}

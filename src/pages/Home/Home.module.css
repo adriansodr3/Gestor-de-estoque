@@ -1,0 +1,13 @@
+.title{
+    font-size: 3.5rem;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}

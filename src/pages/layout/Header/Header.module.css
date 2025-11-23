@@ -1,0 +1,17 @@
+.headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+}
+
+.navItems{
+    display: flex;
+    gap: 2rem;
+    color: #fff;
+}
+
+.title{
+    font-size: 20px;
+}
