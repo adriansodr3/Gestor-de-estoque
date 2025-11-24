@@ -2,6 +2,7 @@ import Styles from "./Home.module.css"
 import DashboardCard from "../../components/DashboardCard/DashboardCard"
 import { useContext } from "react"
 import { StockContext } from "../../contexts/StockContext"
+import StockResume from "../../components/StockResume/StockResume"
 
 export default function Home(){
 
@@ -19,6 +20,14 @@ export default function Home(){
 
     const itemsComEstoqueMenorQue10 = items.filter((item) => item.quantidade < 10).length
 
+    // Pegar os 10 itens mais recentes
+    const recentItems = items
+        .sort((a, b) => new Date(b.criado_em) - new Date(a.criado_em))
+        .slice(0, 10)
+
+    // Pegar os itens com estoque abaixo de 10
+    const finishedItems = items.filter(item => item.quantidade < 10)
+
     return  (
         <section className={Styles.container}>
             <h3 className={Styles.title}>Dashboard</h3>
@@ -28,6 +37,10 @@ export default function Home(){
                 <DashboardCard title="Itens recentes" value={adicionadosNosUltimos10dias}/>
                 <DashboardCard title="Itens acabando" value={itemsComEstoqueMenorQue10}/>
             </ul>
+            <div className={Styles.resume}>
+                <StockResume recentItems={recentItems} h1="Itens recentes" h2="Acoes"/>
+                <StockResume recentItems={finishedItems} h1="Itens acabando" h2="Acoes"/>
+            </div>
         </section>
     )
 }
