@@ -1,0 +1,22 @@
+.container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 3.5rem;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+hr{
+    margin-bottom: 2rem;
+}
