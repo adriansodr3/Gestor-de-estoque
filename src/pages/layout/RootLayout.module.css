@@ -6,8 +6,8 @@
 }
 
 .main {
-  flex: 1;  /* isso faz o main crescer e ocupar todo espaço disponível */
-  overflow-y: auto;  /* permite scroll no conteúdo principal */
+  flex: 1;
+  overflow-y: auto;
   padding: 1rem;
 }
 
@@ -16,4 +16,16 @@
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main {
+    padding: 0.5rem;
+  }
+
+  .footer {
+    padding: 0.75rem 0;
+    font-size: 14px;
+  }
 }

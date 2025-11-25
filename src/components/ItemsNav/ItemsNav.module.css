@@ -14,3 +14,20 @@
 .divider {
     margin-bottom: 2rem;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .divider {
+        margin-bottom: 1rem;
+    }
+}

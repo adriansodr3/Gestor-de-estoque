@@ -124,3 +124,20 @@ button[type="submit"]:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .linhaInput1 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    form {
+        gap: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 14px 32px;
+    }
+}

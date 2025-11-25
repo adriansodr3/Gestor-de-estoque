@@ -24,3 +24,21 @@
     flex: 1;
     min-width: 0;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .cards {
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .resume {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

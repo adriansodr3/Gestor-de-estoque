@@ -15,9 +15,6 @@ export default function Home(){
         const dataAtual = new Date()
         const dataCriacao = new Date(item.criado_em)
         const diferencasEmdia = (dataAtual - dataCriacao) / (1000 * 60 * 60 * 24)
-
-        console.log('📦 Item:', item.nome, '| Dias:', diferencasEmdia.toFixed(2), '| Data:', item.criado_em)
-
         return diferencasEmdia <= 10
     }).length
 

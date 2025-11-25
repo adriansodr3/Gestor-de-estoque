@@ -106,3 +106,31 @@
 .deleteButton:active {
     transform: translateY(0);
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .table thead tr th,
+    .table tbody tr td {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .viewButton,
+    .updateButton,
+    .deleteButton {
+        padding: 6px 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+}
