@@ -1,21 +1,16 @@
-import { Link } from "react-router-dom"
 import Styles from "./StockItem.module.css"
 import StockItemsTable from "../../components/StockItemsTable/StockItemsTable"
+import ItemsNav from "../../components/ItemsNav/ItemsNav"
 import { StockContext } from "../../contexts/StockContext"
 import { useContext } from "react"
 
 export default function StockItems(){
 
-    const {items} = useContext(StockContext)
+    const { items } = useContext(StockContext)
 
     return (
         <section className={Styles.container}>
-            <h3 className={Styles.title}>Stock Items</h3>
-            <nav>
-                <Link to='/items'>Todos os itens</Link>
-                <Link to='/newItem'>Novo Item</Link>
-            </nav>
-            <hr />
+            <ItemsNav title="Stock Items" />
             <StockItemsTable stockItems={items} />
         </section>
     )

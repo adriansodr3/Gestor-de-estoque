@@ -13,28 +13,28 @@ export const StockContext = createContext()
 // children = todos os componentes que terão acesso aos dados
 export function StockContextProvider({children}){
     // Estado que guarda a lista de itens do estoque
-    const [items, setItems] = useState([])
-
-    // 3. Carregar dados do localStorage quando o componente montar
-    // [] = executa apenas uma vez, quando carregar
-    useEffect(() => {
+    const [items, setItems] = useState(() => {
+        // Inicializa o estado diretamente do localStorage
         const storedItems = localStorage.getItem('stock')
-        if (storedItems) {
-            setItems(JSON.parse(storedItems)) // Transforma texto em array/objeto
-        }
-    }, [])
+        return storedItems ? JSON.parse(storedItems) : []
+    })
 
-    // 4. Salvar no localStorage sempre que items mudar
+    // 3. Salvar no localStorage sempre que items mudar
     // [items] = executa toda vez que items for modificado
     useEffect(() => {
-        localStorage.setItem('stock', JSON.stringify(items)) // Transforma array/objeto em texto
+        localStorage.setItem('stock', JSON.stringify(items))
     }, [items])
 
     // 5. Funções para manipular o estoque
 
     // Adicionar: pega lista antiga [...prev] e adiciona novo item no final
     const addItem = (item) => {
-        setItems(prev => [...prev, item])
+        const itemWithId = {
+            id: crypto.randomUUID(),
+            ...item,
+            criado_em: new Date().toISOString()
+        }
+        setItems(prev => [...prev, itemWithId])
     }
 
     // Deletar: filter retorna nova lista SEM o item com aquele id

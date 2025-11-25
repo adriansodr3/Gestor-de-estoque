@@ -4,6 +4,7 @@
     border-radius: 8px;
     overflow: hidden;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .table thead {
@@ -16,6 +17,14 @@
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
+}
+
+.table thead tr th:first-child {
+    width: 70%;
+}
+
+.table thead tr th:last-child {
+    width: 30%;
 }
 
 .table tbody tr {
@@ -37,7 +46,7 @@
 }
 
 .viewButton {
-    background-color: #ffffff;
+    background-color: #3487b8;
     color: #1a1a1a;
     border: none;
     padding: 8px 24px;
@@ -49,7 +58,7 @@
 }
 
 .viewButton:hover {
-    background-color: #e0e0e0;
+    background-color: #45a0d4;
     transform: translateY(-1px);
 }
 

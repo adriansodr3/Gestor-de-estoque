@@ -36,8 +36,16 @@
     text-align: right;
 }
 
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .viewButton {
-    background-color: #ffffff;
+    background-color: #0993d3;
     color: #1a1a1a;
     border: none;
     padding: 8px 24px;
@@ -49,7 +57,7 @@
 }
 
 .viewButton:hover {
-    background-color: #e0e0e0;
+    background-color: #21aff1;
     transform: translateY(-1px);
 }
 
@@ -79,8 +87,8 @@
 }
 
 .deleteButton {
-    background-color: #ffffff;
-    color: #1a1a1a;
+    background-color: #cc3535;
+    color: #ffffff;
     border: none;
     padding: 8px 24px;
     border-radius: 4px;
@@ -91,7 +99,7 @@
 }
 
 .deleteButton:hover {
-    background-color: #e0e0e0;
+    background-color: #a32d2d;
     transform: translateY(-1px);
 }
 

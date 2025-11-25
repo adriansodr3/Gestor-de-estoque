@@ -1,7 +1,8 @@
+import StockForms from "../../components/StockForms/StockForms"
+
+
 export default function NewItem(){
     return (
-        <section>
-            <h3>Criar novo item</h3>
-        </section>
+        <StockForms title="New Item" />
     )
 }

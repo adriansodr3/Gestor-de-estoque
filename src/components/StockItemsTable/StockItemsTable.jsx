@@ -20,7 +20,7 @@ export default function StockResume({stockItems}){
                         <td>{item.nome}</td>
                         <td>{item.quantidade}</td>
                         <td>{item.categoria}</td>
-                        <td>
+                        <td className={Styles.buttons}>
                             <Link to={`/items/${item.id}`}>
                                 <button className={Styles.viewButton}>Ver</button>
                             </Link>
