@@ -44,69 +44,6 @@
     gap: 1rem;
 }
 
-.viewButton {
-    background-color: #0993d3;
-    color: #1a1a1a;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.viewButton:hover {
-    background-color: #21aff1;
-    transform: translateY(-1px);
-}
-
-.viewButton:active {
-    transform: translateY(0);
-}
-
-.updateButton {
-    background-color: #ffffff;
-    color: #1a1a1a;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.updateButton:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-1px);
-}
-
-.updateButton:active {
-    transform: translateY(0);
-}
-
-.deleteButton {
-    background-color: #cc3535;
-    color: #ffffff;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.deleteButton:hover {
-    background-color: #a32d2d;
-    transform: translateY(-1px);
-}
-
-.deleteButton:active {
-    transform: translateY(0);
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
     .table {
@@ -124,13 +61,5 @@
     .buttons {
         flex-direction: column;
         gap: 0.5rem;
-    }
-
-    .viewButton,
-    .updateButton,
-    .deleteButton {
-        padding: 6px 16px;
-        font-size: 12px;
-        width: 100%;
     }
 }

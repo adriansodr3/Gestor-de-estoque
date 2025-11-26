@@ -1,0 +1,56 @@
+.button {
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Variante: Ver */
+.view {
+    background-color: #0993d3;
+    color: #1a1a1a;
+}
+
+.view:hover {
+    background-color: #21aff1;
+}
+
+/* Variante: Atualizar */
+.update {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+.update:hover {
+    background-color: #e0e0e0;
+}
+
+/* Variante: Excluir */
+.delete {
+    background-color: #cc3535;
+    color: #ffffff;
+}
+
+.delete:hover {
+    background-color: #a32d2d;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .button {
+        padding: 6px 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+}

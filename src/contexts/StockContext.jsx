@@ -32,7 +32,8 @@ export function StockContextProvider({children}){
         const itemWithId = {
             id: crypto.randomUUID(),
             ...item,
-            criado_em: new Date().toISOString()
+            criado_em: new Date().toISOString(),
+            atualizado_em: null
         }
         setItems(prev => [...prev, itemWithId])
     }
@@ -45,7 +46,7 @@ export function StockContextProvider({children}){
     // Atualizar: map percorre a lista, se achar o id, mescla as mudanças
     const updateItem = (itemId, updatedItem) => {
         setItems(prev => prev.map(item =>
-            item.id === itemId ? { id: itemId, ...updatedItem } : item
+            item.id === itemId ? { id: itemId, ...updatedItem, atualizado_em: new Date().toISOString() } : item
         ))
     }
 

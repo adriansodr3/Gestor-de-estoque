@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Styles from "./StockItemsTable.module.css"
+import ActionButton from "../ActionButton/ActionButton"
 
 export default function StockResume({stockItems}){
     return (
@@ -22,13 +23,13 @@ export default function StockResume({stockItems}){
                         <td>{item.categoria}</td>
                         <td className={Styles.buttons}>
                             <Link to={`/items/${item.id}`}>
-                                <button className={Styles.viewButton}>Ver</button>
+                                <ActionButton variant="view">Ver</ActionButton>
                             </Link>
                             <Link to={`/items/${item.id}/updtade`}>
-                                <button className={Styles.updateButton}>Atualizar</button>
+                                <ActionButton variant="update">Atualizar</ActionButton>
                             </Link>
                             <Link to={`/items/${item.id}/delete`}>
-                                <button className={Styles.deleteButton}>Excluir</button>
+                                <ActionButton variant="delete">Excluir</ActionButton>
                             </Link>
                         </td>
                     </tr>

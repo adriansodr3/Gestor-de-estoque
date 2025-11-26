@@ -45,27 +45,6 @@
     text-align: right;
 }
 
-.viewButton {
-    background-color: #3487b8;
-    color: #1a1a1a;
-    border: none;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.viewButton:hover {
-    background-color: #45a0d4;
-    transform: translateY(-1px);
-}
-
-.viewButton:active {
-    transform: translateY(0);
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
     .table {
@@ -88,10 +67,5 @@
 
     .table thead tr th:last-child {
         width: 40%;
-    }
-
-    .viewButton {
-        padding: 6px 16px;
-        font-size: 12px;
     }
 }

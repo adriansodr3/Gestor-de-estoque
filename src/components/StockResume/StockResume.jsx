@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Styles from "./StockResume.module.css"
+import ActionButton from "../ActionButton/ActionButton"
 
 export default function StockResume({h1, h2, recentItems}){
     return (
@@ -16,7 +17,7 @@ export default function StockResume({h1, h2, recentItems}){
                         <td>{item.nome}</td>
                         <td>
                             <Link to={`/items/${item.id}`}>
-                                <button className={Styles.viewButton}>Ver</button>
+                                <ActionButton variant="view">Ver</ActionButton>
                             </Link>
                         </td>
                     </tr>
