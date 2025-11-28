@@ -5,6 +5,7 @@ import StockItems from "./pages/StockItems/StocksItem";
 import NewItem from "./pages/NewItem/NewItem"
 import ViewItem from "./pages/ViewItem/ViewItem";
 import GetItemDetail from "./loader/GetItemDetail"
+import EditItem from "./pages/EditItem/EditItem";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
             {
                 path: "/items/:itemId",
                 element: <ViewItem />,
+                loader: GetItemDetail
+            },
+            {
+                path: "/items/:itemId/update",
+                element: <EditItem /> ,
                 loader: GetItemDetail
             },
             {

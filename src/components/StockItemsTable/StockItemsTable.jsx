@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom"
+import { useDeleteItem } from "../../hooks/useDeleteItem"
 import Styles from "./StockItemsTable.module.css"
 import ActionButton from "../ActionButton/ActionButton"
 
 export default function StockResume({stockItems}){
+    const handleDelete = useDeleteItem()  // false = não redireciona (já está na lista)
+
     return (
         <table className={Styles.table}>
             <thead>
@@ -25,12 +28,15 @@ export default function StockResume({stockItems}){
                             <Link to={`/items/${item.id}`}>
                                 <ActionButton variant="view">Ver</ActionButton>
                             </Link>
-                            <Link to={`/items/${item.id}/updtade`}>
+                            <Link to={`/items/${item.id}/update`}>
                                 <ActionButton variant="update">Atualizar</ActionButton>
                             </Link>
-                            <Link to={`/items/${item.id}/delete`}>
-                                <ActionButton variant="delete">Excluir</ActionButton>
-                            </Link>
+                            <ActionButton
+                                variant="delete"
+                                onClick={() => handleDelete(item.id, item.nome)}
+                            >
+                                Excluir
+                            </ActionButton>
                         </td>
                     </tr>
                 ))}

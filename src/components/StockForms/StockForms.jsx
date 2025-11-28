@@ -1,19 +1,26 @@
 import Styles from "./StockForms.module.css"
 import ItemsNav from "../ItemsNav/ItemsNav"
-import { useState, useContext } from "react"
-import { StockContext } from "../../contexts/StockContext"
+import { useState } from "react"
 
-export default function StockForms({title, nome, quantidade, preco, categoria, descricao}){
-    
-    const [name, setName] = useState()
-    const [quantity, setQuantity] = useState()
-    const [price, setPrice] = useState()
-    const [category, setCategory] = useState()
-    const [description, setDescription] = useState()
-    
-    const { addItem } = useContext(StockContext)
+export default function StockForms({
+    title,
+    nome,
+    quantidade,
+    preco,
+    categoria,
+    descricao,
+    onSubmit,      // Função a ser executada (addItem ou updateItem)
+    itemId         // ID do item (necessário para update)
+}){
 
-    function addItemOnStorage(e){
+    // Inicializa o useState com os valores das props
+    const [name, setName] = useState(nome || "")
+    const [quantity, setQuantity] = useState(quantidade || "")
+    const [price, setPrice] = useState(preco || "")
+    const [category, setCategory] = useState(categoria || "")
+    const [description, setDescription] = useState(descricao || "")
+
+    function handleSubmit(e){
         e.preventDefault()
 
          // Validação
@@ -21,37 +28,39 @@ export default function StockForms({title, nome, quantidade, preco, categoria, d
             alert('Preencha todos os campos obrigatórios!')
             return
         }
-        
+
         // Validar números
         if (Number(quantity) <= 0 || Number(price) <= 0) {
             alert('Quantidade e preço devem ser maiores que zero!')
             return
         }
 
-        const newItem = {
+        const itemData = {
             nome: name,
             quantidade: Number(quantity),
             preco: Number(price),
             categoria: category,
             descricao: description || ""
         }
-        
-        addItem(newItem)
-        alert('Item adicionado com sucesso!')
 
-        // Limpar campos
-        setName('')
-        setQuantity('')
-        setPrice('')
-        setCategory('')
-        setDescription('')
+        // Chama a função passada via props
+        onSubmit(itemData, itemId)
+
+        // Limpar campos apenas se for addItem (não tem itemId)
+        if (!itemId) {
+            setName('')
+            setQuantity('')
+            setPrice('')
+            setCategory('')
+            setDescription('')
+        }
     }
 
 
     return (
         <section>
             <ItemsNav title={title} />
-            <form onSubmit={addItemOnStorage}>
+            <form onSubmit={handleSubmit}>
             <div className={Styles.linhaInput1}>
                 <div>
                     <label htmlFor="name">Nome</label>

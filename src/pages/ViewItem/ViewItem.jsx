@@ -1,4 +1,5 @@
 import { useLoaderData, Link } from "react-router-dom"
+import { useDeleteItem } from "../../hooks/useDeleteItem"
 import ItemsNav from "../../components/ItemsNav/ItemsNav"
 import ActionButton from "../../components/ActionButton/ActionButton"
 import InfoCard from "../../components/InfoCard/InfoCard"
@@ -7,8 +8,9 @@ import Styles from "./ViewItem.module.css"
 export default function ViewItem(){
 
     const item = useLoaderData()
+    const handleDelete = useDeleteItem(true)  // true = redireciona após deletar
     const dataCadastro = new Date(item.criado_em).toLocaleString('pt-BR')
-    
+
     return (
         <section>
             <ItemsNav />
@@ -18,9 +20,12 @@ export default function ViewItem(){
                     <Link to={`/items/${item.id}/update`}>
                         <ActionButton variant="update">Atualizar</ActionButton>
                     </Link>
-                    <Link to={`/items/${item.id}/delete`}>
-                        <ActionButton variant="delete">Excluir</ActionButton>
-                    </Link>
+                    <ActionButton
+                        variant="delete"
+                        onClick={() => handleDelete(item.id, item.nome)}
+                    >
+                        Excluir
+                    </ActionButton> 
                 </div>
             </div>
             <div className={Styles.InfoCard}>
